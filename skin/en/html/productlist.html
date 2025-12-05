@@ -1,0 +1,121 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{sort:name}-{sort:title}</title>
+<meta name="Keywords" content="{sort:keywords}" />
+<meta name="Description" content="{sort:description}" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover" />
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+<link href="{pboot:sitetplpath}/css/en011.css" rel="stylesheet" />
+<link href="{pboot:sitetplpath}/css/swiper.css" rel="stylesheet" type="text/css" />
+<link href="{pboot:sitetplpath}/css/style.css" rel="stylesheet" type="text/css" />
+<link href="{pboot:sitetplpath}/css/page.css" rel="stylesheet" type="text/css" />
+<link href="{pboot:sitetplpath}/css/pagemob.css" rel="stylesheet" type="text/css" media="(max-width:1024px)" />
+
+</head>
+<body>
+{include file=head.html}
+<!-- main -->
+<main>
+  <div class="banner-inner">
+    <img src="{sort:pic}" width="1919" height="350" class="innerbanners" alt="Banner" />
+    <div class="banner-content">
+		<div class="container">
+			<h1 class="banner-title-h1">{sort:name}</h1>
+			<div class="banner-breadcrumbs">{pboot:position separator=>> indextext=Home}</div>
+		</div>
+    </div>
+  </div>
+  <section class="common-main product-main">
+    <div class="l-wrap">
+      <div class="page-container">
+        <aside class="sidebar">
+			<div class="sidebar-item search">
+				<form action="{pboot:scaction}"  method="get">
+					<div class="sidebar-search">
+						<form action="{pboot:scaction}"  method="get">
+						<input id="SidebarSearch" name="keyword" placeholder="Search..." />
+						<button class="search-btn" type="submit"><em class="iconfont icon-search"></em></button>
+					</div>
+				</form>
+			</div>
+			<div class="sidebar-item category">
+				<p class="sidebar-title">Categories</p>
+				<ul class="sidebar-cate">
+				{pboot:nav num=10 parent={sort:tcode}}
+					<li class="menu-item LiLevel1" id="LeftNavCat1">
+						<a href="[nav:link]">[nav:name]</a>
+						{pboot:if([nav:soncount]>0)}
+							<ul class="sub-menu">
+							{pboot:2nav num=10 parent=[nav:scode]}
+								<li class="LiLevel2"><a href="[2nav:link]" id="18797986">[2nav:name]</a></li>
+							{/pboot:2nav}
+							</ul>
+						{/pboot:if}
+					</li>
+				{/pboot:nav}
+				</ul>
+			</div>
+			<div class="sidebar-item recommended">
+				<p class="sidebar-title">Recommended</p>
+				<ul class="sidebar-prolist">
+				{pboot:list scode=2 num=6 order=sorting}
+				<li>
+					<a href="[list:link]"><img data-src="[list:ico]" class="lazy" alt="[list:title]" /></a>
+					<div>
+						<a href="[list:link]" class="line2">[list:title len=20]</a>
+						<p class="line2">[list:description]</p>
+					</div>
+				</li>
+				{/pboot:list}
+				</ul>
+			</div>
+        </aside>
+        <div class="page-main">
+			<h1 class="pro-cate-title">{sort:name}</h1>
+			<ul class="pro-list list1">
+				{pboot:list num=10 order=sorting}
+				<li>
+					<div class="pro-img">
+						<a href="[list:link]" class="lazy-wrap" title="[list:title]">
+							<img data-src="[list:ico]" data-sizes="360x0 768w,316x0 1024w,289x0 1280w,288x0 1366w,312x0 1440w,363x0 1600w" class="lazy" width="360" height="290" alt="[list:title]" />
+							<em class="iconfont icon-videoplay"></em>
+							<span class="lazy-load"></span>
+							{pboot:if('[list:i]'<4)}<em class="iconfont icon-hottitle"></em>{/pboot:if}
+						</a>
+					</div>
+					<div class="pro-info">
+						<div class="title"><h5><a href="[list:link]">[list:title]</a></h5></div>
+						<a class="pro-btn" href="[list:link]">view more</a>
+					</div>
+				</li>
+				{/pboot:list}
+			</ul>
+			<div class="mypages">
+				<ul>
+					<li><a href='{page:index}'>First</a></li>
+					<li><a href='{page:pre}'>Up</a></li>
+					{page:numbar}
+					<li><a href='{page:next}'>Next</a></li>
+					<li><a href='{page:last}'>Last</a></li>
+				</ul>
+			</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<!-- footer -->
+{include file=foot.html}
+<!-- script -->
+<script src="{pboot:sitetplpath}/js/jquery-3.6.0.js"></script>
+<script src="{pboot:sitetplpath}/js/sitescript.js"></script>
+<script src="{pboot:sitetplpath}/js/swiper.js"></script>
+<script src="{pboot:sitetplpath}/js/style.js"></script>
+<script src="{pboot:sitetplpath}/js/page.js"></script>
+</body>
+</html>

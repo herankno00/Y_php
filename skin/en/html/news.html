@@ -1,0 +1,121 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{content:title}-{pboot:sitesubtitle}</title>
+<meta name="Keywords" content="{content:keywords}" />
+<meta name="Description" content="{content:description}" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover" />
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link href="{pboot:sitetplpath}/css/en011.css" rel="stylesheet" />
+<link href="{pboot:sitetplpath}/css/swiper.css" rel="stylesheet" type="text/css" />
+<link href="{pboot:sitetplpath}/css/style.css" rel="stylesheet" type="text/css" />
+<link href="{pboot:sitetplpath}/css/page.css" rel="stylesheet" type="text/css" />
+<link href="{pboot:sitetplpath}/css/pagemob.css" rel="stylesheet" type="text/css" media="(max-width:1024px)" />
+<script src="{pboot:sitetplpath}/js/jquery-3.6.0.js"></script>
+<link href="{pboot:sitetplpath}/css/templates.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+{include file=head.html}
+<!-- main -->
+<main>
+  <div class="banner-inner">
+    <img src="{sort:pic}" width="1919" height="350" class="innerbanners" alt="Banner" />
+    <div class="banner-content">
+		<div class="container">
+			<h1 class="banner-title-h1">{sort:name}</h1>
+			<div class="banner-breadcrumbs">{pboot:position separator=>> indextext=Home}</div>
+		</div>
+    </div>
+  </div>
+  <section class="common-main news-detail-main">
+    <div class="l-wrap">
+      <div class="page-container">
+        <aside class="sidebar">
+			<div class="sidebar-item search">
+				<form action="{pboot:scaction}"  method="get">
+					<div class="sidebar-search">
+						<form action="{pboot:scaction}"  method="get">
+						<input id="SidebarSearch" name="keyword" placeholder="Search..." />
+						<button class="search-btn" type="submit"><em class="iconfont icon-search"></em></button>
+					</div>
+				</form>
+			</div>
+			<div class="sidebar-item category">
+				<p class="sidebar-title">Categories</p>
+				<ul class="sidebar-cate">
+				{pboot:nav num=10 parent={sort:tcode}}
+					<li class="menu-item LiLevel1" id="LeftNavCat1">
+						<a href="[nav:link]">[nav:name]</a>
+						{pboot:if([nav:soncount]>0)}
+							<ul class="sub-menu">
+							{pboot:2nav num=10 parent=[nav:scode]}
+								<li class="LiLevel2"><a href="[2nav:link]" id="18797986">[2nav:name]</a></li>
+							{/pboot:2nav}
+							</ul>
+						{/pboot:if}
+					</li>
+				{/pboot:nav}
+				</ul>
+			</div>
+			<div class="sidebar-item inquiry" id="toinquiry">
+				<div class="sidebar-title">Send Message</div>
+				<form class="inquiry-form" action="{pboot:msgaction}"  method="post">
+					<div id="feedbackForm">
+						<div class="send-inquiry default">
+							<input type="text" name="contacts" placeholder="Your Name:">
+							<input type="text" name="mail" class="require" placeholder="E-mail:*">
+							<textarea name="content" cols="30" rows="10" class="require" placeholder="Content*"></textarea>
+							<button class="send-btn hvr-icon-wobble-horizontal hvr-bounce-to-right-y">
+								<div class="span" type="submit">Send</div>
+								<div class="span"><i class="iconfont icon-angle-right hvr-icon" aria-hidden="true"></i></div>
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+        </aside>
+        <div class="page-main">
+          <div class="page-box-shadow">
+            <h1 class="newscontent-title">{content:title}</h1>
+            <div class="newscontent-date">
+				<span><em class="iconfont icon-date"></em>{content:date style=Y-M-d}</span>
+				<span class="news-views" id="page-content-view">Visits:{content:visits}</span>
+				<span class="newsendinquiry">Leave a message</span>
+			</div>
+            <div class="newscontent-details">
+				<article><p>{content:content}</p></article>
+            </div>
+            <div class="share-btn-list"></div>
+          </div>
+			<div class="pagelink">
+				<div class="pagelink-item prev">
+					<div class="pagelink-info">
+						<p class="link-intro">Previous</p>
+						<p>{content:precontent notext='No more!'}</p>
+					</div>
+				</div>
+				<div class="pagelink-item next">
+					<div class="pagelink-info">
+						<p>{content:nextcontent notext='No more!'}</p>
+						<p class="link-intro">Next</p>
+					</div>
+				</div>
+			</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<!-- footer -->
+
+{include file=foot.html}
+<script src="{pboot:sitetplpath}/js/jquery-3.6.0.js"></script>
+<script src="{pboot:sitetplpath}/js/sitescript.js"></script>
+<script src="{pboot:sitetplpath}/js/swiper.js"></script>
+<script src="{pboot:sitetplpath}/js/style.js"></script>
+<script src="{pboot:sitetplpath}/js/page.js"></script>
+</body>
+</html>

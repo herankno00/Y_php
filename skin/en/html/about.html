@@ -1,0 +1,87 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{sort:name}-{sort:title}</title>
+<meta name="Keywords" content="{sort:keywords}" />
+<meta name="Description" content="{sort:description}" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover" />
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link href="{pboot:sitetplpath}/css/en011.css" rel="stylesheet" />
+<link href="{pboot:sitetplpath}/css/swiper.css" rel="stylesheet" type="text/css" />
+<link href="{pboot:sitetplpath}/css/style.css" rel="stylesheet" type="text/css" />
+<link href="{pboot:sitetplpath}/css/page.css" rel="stylesheet" type="text/css" />
+<link href="{pboot:sitetplpath}/css/pagemob.css" rel="stylesheet" type="text/css" media="(max-width:1024px)" />
+
+</head>
+<body>
+{include file=head.html}
+<!-- main -->
+<main>
+  <div class="banner-inner">
+    <img src="{sort:pic}" width="1919" height="350" class="innerbanners" alt="{sort:name}" />
+    <div class="banner-content">
+		<div class="container">
+			<h1 class="banner-title-h1">{sort:name}</h1>
+			<div class="banner-breadcrumbs">{pboot:position separator=>> indextext=Home}</div>
+		</div>
+    </div>
+  </div>
+  <section class="common-main single-main">
+    <div class="l-wrap">
+		<article>
+			<div class="company-about-wrap">
+				<div class="about-img"><img loading="lazy" src="{content:ico}" /></div>
+
+				<div class="about-info">
+					<div class="home-des">Introduction of our company</div>
+					<h4 class="home-title">{pboot:companyname}</h4>
+					<div class="about-content">{content:content}</div>
+					<ul>
+						<li><img loading="lazy" src="{pboot:sitetplpath}/images/company-1.png" /><span>Unlimited Revisions</span></li>
+						<li><img loading="lazy" src="{pboot:sitetplpath}/images/company-1.png" /><span>Good Features</span></li>
+						<li><img loading="lazy" src="{pboot:sitetplpath}/images/company-1.png" /><span>Best Solutions</span></li>
+						<li><img loading="lazy" src="{pboot:sitetplpath}/images/company-1.png" /><span>24/7 Suppoort</span></li>
+					</ul>
+					<p class="color">Question? <span>{pboot:companyphone}</span></p>
+				</div>
+			</div>
+
+			<div class="company-logo">
+				<ul>
+				{pboot:list scode=32 num=10 order=sorting}
+					<li><img loading="lazy" alt="[list:title]" title="[list:title]" src="[list:ico]" /></li>
+				{/pboot:list}
+				</ul>
+			</div>
+
+			<div class="company-list">
+				<div>
+					<div class="home-des">More sernice us</div>
+					<div class="home-title">We are leading outdoor equipment company</div>
+				</div>
+				<ul>
+				{pboot:list scode=30 num=4 order=sorting}
+					<li>
+						<div class="icon"><em class="icon-[list:subtitle] iconfont"></em></div>
+						<div class="title">[list:title]</div>
+						<div class="text">[list:content drophtml=1 len=350]</div>
+					</li>
+				{/pboot:list}
+				</ul>
+			</div>
+		</article>
+    </div>
+  </section>
+</main>
+<!-- footer -->
+{include file=foot.html}
+<script src="{pboot:sitetplpath}/js/jquery-3.6.0.js"></script>
+<script src="{pboot:sitetplpath}/js/sitescript.js"></script>
+<script src="{pboot:sitetplpath}/js/swiper.js"></script>
+<script src="{pboot:sitetplpath}/js/style.js"></script>
+<script src="{pboot:sitetplpath}/js/home.js"></script>
+<script src="{pboot:sitetplpath}/js/count.js"></script>
+</body>
+</html>

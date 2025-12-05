@@ -1,0 +1,84 @@
+<!-- header -->
+<header>
+	<div class="head-top">
+		<div class="l-wrap"> 
+			<p class="text">{pboot:companyname}</p>
+<!-- 			<div class="lang">
+				<div title="language" class="lang-icon"><img src="{pboot:sitetplpath}/images/en.png" width="24" height="16" loading="lazy" alt="en" /><span>Language</span></div>
+				<div class="lang-drop">
+					<span class="lang-arrow"></span>
+					<ul class="lang-wrap">
+						<li class="lang-active"><a href="{pboot:sitepath}/"><img src="{pboot:sitetplpath}/images/en.png" width="24" height="16" loading="lazy" alt="English" /> English</a></li>
+					</ul>
+				</div>
+			</div> -->
+		</div>
+	</div>
+	
+	<div class="head-info">
+		<div class="l-wrap">
+			<div class="head-logo">
+				<a href="{pboot:sitepath}/" title="{pboot:companyname}"><img src="{pboot:sitelogo}" alt="{pboot:companyname}" /><span></span></a>
+			</div>
+			<div class="head-list">
+				<div class="item">
+					<div class="icon"><em class="iconfont icon-email"></em></div>
+					<div class="info"><span>Email</span><p>{pboot:companyemail}</p></div>
+				</div>
+				<div class="item">
+					<div class="icon"><em class="iconfont icon-telephone"></em></div>
+					<div class="info"><span>Tel</span><p><a href="tel:{pboot:companymobile}">{pboot:companymobile}</a></p></div>
+				</div>
+				<div class="item">
+					<div class="icon"><em class="iconfont icon-whatsapp"></em></div>
+					<div class="info"><span>WhatsApp</span><p><a href="https://web.whatsapp.com/send?l=en&phone={label:whatsapp}" id="T8" rel="nofollow" target="_blank">{label:whatsapp}</a></p></div>
+				</div>
+			</div>
+			<div class="head-share">
+				<ul>
+					<li><a href="https://www.facebook.com/" class="social-item fb" rel="nofollow" target="_blank" title="facebook"><i class="iconfont icon-facebook"></i></a></li>
+					<li><a href="https://twitter.com/" class="social-item tw" rel="nofollow" target="_blank" title="twitter"><i class="iconfont icon-twitter"></i></a></li>
+					<li><a href="https://www.linkedin.com/" class="social-item lk" rel="nofollow" target="_blank" title="linkedin"><i class="iconfont icon-linkedin"></i></a></li>
+					<li><a href="https://www.instagram.com/" class="social-item ins" rel="nofollow" target="_blank" title="instagram"><i class="iconfont icon-instagram"></i></a></li>
+				</ul>
+			</div>
+			<div class="m-menu"><span></span><span></span><span></span></div>
+		</div>
+	</div>
+	
+	<div class="head-nav">
+		<div class="l-wrap">
+			<ul class="nav-ul">
+				<li id="liHome"> <a href="{pboot:sitepath}/" {pboot:if(0=='{sort:scode}')}class="inmenu_1"{/pboot:if}>Home</a></li>
+				{pboot:nav num=10 parent=0}
+				<li id="liabout-us">
+					<a href="[nav:link]" {pboot:if('[nav:scode]'=='{sort:tcode}')}class="inmenu_1"{/pboot:if}>[nav:name]</a>
+					{pboot:if([nav:soncount]>0)}
+					<ul class="submenu">
+					{pboot:2nav num=10 parent=[nav:scode]}
+						<li class="menu-item LiLevel1">
+							<a href="[2nav:link]">[2nav:name]</a>
+							<ul>
+							{pboot:3nav num=10 parent=[2nav:scode]}
+								<li class="LiLevel2"> <a href="[3nav:link]">[3nav:name]</a> </li>
+							{/pboot:3nav}
+							</ul>
+						</li>
+					{/pboot:2nav}
+					</ul>
+					{/pboot:if}
+				</li>
+				{/pboot:nav}
+			</ul>
+			<div class="search-box">
+				<form action="{pboot:scaction}"  method="get">
+					<div class="head-search"><button type="button" title="Search"><em class="iconfont icon-search"></em></button></div>
+					<div class="search-input">
+						<input id="txtSearch" placeholder="Keyword" name="keyword">
+						<button class="search-btn" onclick="PSearchTop()" title="Search"><em class="iconfont icon-search" aria-hidden="true"></em></button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</header>

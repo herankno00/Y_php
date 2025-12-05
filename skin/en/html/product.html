@@ -1,0 +1,197 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{content:title}-{pboot:sitesubtitle}</title>
+<meta name="Keywords" content="{content:keywords}" />
+<meta name="Description" content="{content:description}" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover" />
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link href="{pboot:sitetplpath}/css/en011.css" rel="stylesheet" />
+<link href="{pboot:sitetplpath}/css/swiper.css" rel="stylesheet" type="text/css" />
+<link href="{pboot:sitetplpath}/css/style.css" rel="stylesheet" type="text/css" />
+<link href="{pboot:sitetplpath}/css/page.css" rel="stylesheet" type="text/css" />
+<link href="{pboot:sitetplpath}/css/pagemob.css" rel="stylesheet" type="text/css" media="(max-width:1024px)" />
+<script src="{pboot:sitetplpath}/js/jquery-3.6.0.js"></script>
+<link href="{pboot:sitetplpath}/css/templates.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+{include file=head.html}
+<!-- main -->
+<main class="pro-main prodetails-main">
+  <div class="banner-inner">
+    <img src="{sort:pic}" width="1919" height="350" class="innerbanners" alt="Banner" />
+    <div class="banner-content">
+		<div class="container">
+			<h1 class="banner-title-h1">{sort:name}</h1>
+			<div class="banner-breadcrumbs">{pboot:position separator=>> indextext=Home}</div>
+		</div>
+    </div>
+  </div>
+  <section class="common-main">
+    <div class="l-wrap">
+      <div class="page-container">
+        <aside class="sidebar">
+			<div class="sidebar-item search">
+				<form action="{pboot:scaction}"  method="get">
+					<div class="sidebar-search">
+						<form action="{pboot:scaction}"  method="get">
+						<input id="SidebarSearch" name="keyword" placeholder="Search..." />
+						<button class="search-btn" type="submit"><em class="iconfont icon-search"></em></button>
+					</div>
+				</form>
+			</div>
+			<div class="sidebar-item category">
+				<p class="sidebar-title">Categories</p>
+				<ul class="sidebar-cate">
+				{pboot:nav num=10 parent={sort:tcode}}
+					<li class="menu-item LiLevel1" id="LeftNavCat1">
+						<a href="[nav:link]">[nav:name]</a>
+						{pboot:if([nav:soncount]>0)}
+							<ul class="sub-menu">
+							{pboot:2nav num=10 parent=[nav:scode]}
+								<li class="LiLevel2"><a href="[2nav:link]" id="18797986">[2nav:name]</a></li>
+							{/pboot:2nav}
+							</ul>
+						{/pboot:if}
+					</li>
+				{/pboot:nav}
+				</ul>
+			</div>
+			<div class="sidebar-item inquiry" id="toinquiry">
+				<div class="sidebar-title">Send Message</div>
+				<div id="feedbackForm">&nbsp;
+					<div class="send-inquiry default">
+						<form class="inquiry-form" action="{pboot:msgaction}"  method="post">
+							<input type="text" placeholder="Your Name:" name="contacts">
+							<input type="text" class="require" placeholder="E-mail:*" name="mail">
+							<textarea cols="30" rows="10" class="require" placeholder="Content*" name="content"></textarea>
+							<button class="send-btn hvr-icon-wobble-horizontal hvr-bounce-to-right-y">
+								<div class="span" type="submit">Send</div>
+								<div class="span"><i class="iconfont icon-angle-right hvr-icon" aria-hidden="true"></i></div>
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+        </aside>
+        <div class="page-main">
+          <div class="page-box-shadow">
+            <div class="prodetails-top">
+				<div class="preview-container">
+					<video id="media" controls style="display:none" preload="auto">
+						<source src="{content:ext_video}">
+					</video>
+					<div class="small-box">
+						<img src="{content:ico}" alt="{content:title}" />
+						<span class="hover"></span>
+						<em class="vPlay iconfont icon-video-play"></em>
+					</div>
+					<div class="thumbnail-box">
+						<div class="list swiper" id="gallery">
+							<div class="wrapper swiper-wrapper">
+								{pboot:pics num=6 id={content:id}}
+								<div class="swiper-slide item lazy-wrap">
+									<img class="lazy" data-src="[pics:src]" alt="[pics:title]" title="[pics:title]" />
+									<span class="lazy-load"></span>
+									<p class="imgalt">[pics:title]</p>
+								</div>
+								{/pboot:pics}
+							</div>
+						</div>
+						<div class="prodetails-button-next"><em class="iconfont icon-jiantou_xiangyou"></em></div>
+						<div class="prodetails-button-prev"><em class="iconfont icon-jiantou_xiangzuo"></em></div>
+					</div>
+					<div class="big-box" style="display: none">
+						<img src="{content:ico}" alt="{content:title}" />
+					</div>
+					<div class="banner-page"><span class="page-now">1</span><span class="of">/</span><span class="page-all"></span></div>
+				</div>
+				<div class="prodetails-info">
+					<h1 class="prodetails-name">{content:title}</h1>
+					<div class="prodetails-text">{content:ext_id}</div>
+					<div class="prodetails-btnlist btn">
+						<div class="pro-btn send inquiry-btn probtn">View details</div>
+						<div class="addToCart">{pboot:sort scode=11}<a href="[sort:link]" target="_blank">Online ordering</a>{/pboot:sort}</div>
+					</div>
+					<div class="share-btn-list">
+						<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+							<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+							<a class="a2a_button_facebook"></a>
+							<a class="a2a_button_x"></a>
+							<a class="a2a_button_linkedin"></a>
+							<a class="a2a_button_pinterest"></a>
+							<a class="a2a_button_vk"></a>
+							<a class="a2a_button_whatsapp"></a>
+						</div>
+					</div>
+					<script src="https://static.addtoany.com/menu/page.js" async="async"></script>
+				</div>
+            </div>
+            <div class="prodetails-content">
+              <article id="con">
+                <div class="part-con" id="tagContent">
+					<div class="tagContent" id="tagContent0">
+						<div class="wmkc-template-56">
+							<div class="wmkc-template-3">
+								<h5 class="wmkc-border-orange wmkc-orange">Products Description</h5>
+							</div>
+							<p>{content:content}</p>
+
+							<div class="wmkc-template-3">
+								<h5 class="wmkc-border-orange wmkc-orange">Our factory</h5>
+							</div>
+
+							<div class="wmkc-template-40">
+								<div class="wmkc-flex-jc-sb wmkc-position-title wmkc-scale wmkc-text-align-c">
+								{pboot:list scode=5 num=4 order=sorting}
+									<div class="wmkc-flex-item wmkc-flex-item4">
+										<div class="wmkc-item-img"><img alt="[list:title]" loading="lazy" title="[list:title]" width="220" height="220" src="[list:ico]"></div>
+										<p class="wmkc-item-title">[list:title len=18]</p>
+									</div>
+								{/pboot:list}
+								</div>
+							</div>
+						</div>
+						<p class="productsTags">
+							Hot Tags: 
+							{pboot:tags id={content:id} scode={sort:tcode}}
+							<a href="[tags:link]">[tags:text]</a>
+							{/pboot:tags}
+						</p>
+					</div>
+                </div>
+              </article>
+            </div>
+          </div>
+			<div class="pagelink">
+				<div class="pagelink-item prev">
+					<div class="pagelink-info">
+						<p class="link-intro">Previous</p>
+						<p>{content:precontent notext='No more!'}</p>
+					</div>
+				</div>
+				<div class="pagelink-item next">
+					<div class="pagelink-info">
+						<p>{content:nextcontent notext='No more!'}</p>
+						<p class="link-intro">Next</p>
+					</div>
+				</div>
+			</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<!-- footer -->
+{include file=foot.html}
+<script src="{pboot:sitetplpath}/js/sitescript.js"></script>
+<script src="{pboot:sitetplpath}/js/swiper.js"></script>
+<script src="{pboot:sitetplpath}/js/style.js"></script>
+<script src="{pboot:sitetplpath}/js/page.js"></script>
+<script src="{pboot:sitetplpath}/js/preview.js"></script>
+<script src="{pboot:sitetplpath}/js/en.js"></script>
+</body>
+</html>

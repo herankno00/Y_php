@@ -1,0 +1,123 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{sort:name}-{sort:title}</title>
+<meta name="Keywords" content="{sort:keywords}" />
+<meta name="Description" content="{sort:description}" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover" />
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link href="{pboot:sitetplpath}/css/en011.css" rel="stylesheet" />
+<link href="{pboot:sitetplpath}/css/swiper.css" rel="stylesheet" type="text/css" />
+<link href="{pboot:sitetplpath}/css/style.css" rel="stylesheet" type="text/css" />
+<link href="{pboot:sitetplpath}/css/page.css" rel="stylesheet" type="text/css" />
+<link href="{pboot:sitetplpath}/css/pagemob.css" rel="stylesheet" type="text/css" media="(max-width:1024px)" />
+<script src="{pboot:sitetplpath}/js/jquery-3.6.0.js"></script>
+<link href="{pboot:sitetplpath}/css/templates.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+{include file=head.html}
+<!-- main -->
+<main>
+	<div class="banner-inner">
+		<img src="{sort:pic}" width="1919" height="350" class="innerbanners" alt="Banner" />
+		<div class="banner-content">
+			<div class="container">
+				<h1 class="banner-title-h1">{sort:name}</h1>
+				<div class="banner-breadcrumbs">{pboot:position separator=>> indextext=Home}</div>
+			</div>
+		</div>
+	</div>
+	<section class="common-main single-main">
+		<div class="l-wrap">
+			<article>
+				<div class="contact-list">
+					<div class="contact-item">
+						<em class="icon-adress iconfont"></em>
+						<p class="contact-item-title">Company Location</p>
+						<p class="contact-item-text">{pboot:companyaddress}</p>
+					</div>
+
+					<div class="contact-item">
+						<em class="icon-tel iconfont"></em>
+						<p class="contact-item-title">Company Telephone</p>
+						<p class="contact-item-text"><a href="tel:{pboot:companyphone}">{pboot:companyphone}</a>Or<br />
+						<a href="tel:{pboot:companymobile}">{pboot:companymobile}</a></p>
+					</div>
+
+					<div class="contact-item">
+						<em class="icon-email iconfont"></em>
+						<p class="contact-item-title">E-mail Address</p>
+						<p class="contact-item-text"><a href="mailto:{pboot:companyemail}">{pboot:companyemail}</a></p>
+					</div>
+				</div>
+
+				<div class="contact-box">
+					<div class="contact-img">
+						<script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=U3T9fNEyhNGBuMrsb9FymGlDg2RsAhDF"></script>
+						<style type="text/css">
+							#allmap {width: 100%;height: 350px;margin-top:20px;overflow: hidden;font-family:"微软雅黑";}
+							#allmap b{color: #CC5522;font-size: 14px; }
+							#allmap img{max-width: none;}
+						</style>
+						<div id="allmap"></div>
+						<script type="text/javascript">
+						  var map = new BMap.Map("allmap");
+						  map.centerAndZoom(new BMap.Point({label:zuobiao}), 18);
+						  var marker1 = new BMap.Marker(new BMap.Point({label:zuobiao}));  // 创建标注
+						  map.addOverlay(marker1);              // 将标注添加到地图中
+						  //marker1.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画				
+						  //创建信息窗口 
+						  var infoWindow1 = new BMap.InfoWindow("<b>{pboot:companyname}</b><br>ADD:{pboot:companyaddress}<br>TEL:{pboot:companyphone}");
+						  marker1.openInfoWindow(infoWindow1);
+						  //marker1.addEventListener("click", function(){this.openInfoWindow(infoWindow1);});	
+						  //向地图中添加缩放控件
+						 var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+						 map.addControl(ctrl_nav);
+						  //向地图中添加缩略图控件
+							 var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+							 map.addControl(ctrl_ove);
+								  //向地图中添加比例尺控件
+							 var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+							 map.addControl(ctrl_sca);
+							 map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+							map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+							map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+							map.enableKeyboard();//启用键盘上下左右键移动地				
+						</script>
+					</div>
+					<div class="contact-main">
+						<div class="title">leave a message</div>
+
+						<div id="feedbackForm">&nbsp;
+							<div class="send-inquiry default">
+								<form class="inquiry-form" action="{pboot:msgaction}"  method="post">
+									<input type="text" placeholder="Your Name:" name="contacts">
+									<input type="text" class="require" placeholder="E-mail:*" name="mail">
+									<textarea cols="30" rows="10" class="require" placeholder="Content*" name="content"></textarea>
+
+									<button class="send-btn hvr-icon-wobble-horizontal hvr-bounce-to-right-y">
+										<div class="span" type="submit">Send</div>
+										<div class="span"><i class="iconfont icon-angle-right hvr-icon" aria-hidden="true"></i></div>
+									</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</article>
+		</div>
+	</section>
+</main>
+<!-- footer -->
+{include file=foot.html}
+<script src="{pboot:sitetplpath}/js/jquery-3.6.0.js"></script>
+<script src="{pboot:sitetplpath}/js/sitescript.js"></script>
+<script src="{pboot:sitetplpath}/js/swiper.js"></script>
+<script src="{pboot:sitetplpath}/js/style.js"></script>
+<script src="{pboot:sitetplpath}/js/home.js"></script>
+<script src="{pboot:sitetplpath}/js/count.js"></script>
+</body>
+</html>

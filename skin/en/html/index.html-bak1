@@ -1,0 +1,187 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{pboot:sitetitle}</title>
+<meta name="Keywords" content="{pboot:sitekeywords}" />
+<meta name="Description" content="{pboot:sitedescription}" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover" />
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link href="{pboot:sitetplpath}/css/en011.css" rel="stylesheet" />
+<link href="{pboot:sitetplpath}/css/style.css" rel="stylesheet" type="text/css" />
+<link href="{pboot:sitetplpath}/css/home.css" rel="stylesheet" type="text/css" />
+<link href="{pboot:sitetplpath}/css/swiper.css" rel="stylesheet" type="text/css" />
+<link href="{pboot:sitetplpath}/css/aos.css" rel="stylesheet" type="text/css" media="(min-width:1025px)" />
+
+</head>
+<body class="index">
+{include file=head.html}
+<!-- main -->
+<main>
+	<section class="home-banner">
+		<div class="swiper" id="indexbanner">
+			<div class="swiper-wrapper">
+				{pboot:slide gid=1}
+				<div class="swiper-slide">
+					<a href="[slide:link]" class="pcimg" title="[slide:title]"><img src="[slide:src]" width="1920" height="750" alt="[slide:title]" /></a>
+					<a href="[slide:link]" class="mobimg" title="[slide:title]"><img src="[slide:src]" width="750" height="293" alt="[slide:title]" /></a>
+					<div class="banner-animote">
+						<div class="title">[slide:title]</div>
+						<div class="text">[slide:subtitle]</div>
+					</div>
+				</div>
+				{/pboot:slide}
+			</div>
+			<div class="swiper-pagination"></div>
+			<div class="banner-button-next"><em class="iconfont icon-xiangyoujiantou"></em></div>
+			<div class="banner-button-prev"><em class="iconfont icon-xiangzuojiantou"></em></div>
+		</div>
+	</section>
+
+	<section class="home-choose">
+		<div class="l-wrap">
+			<div data-aos="zoom-in">
+				<div class="home-des">Cutting-edge technology to the highest quality</div>
+				<h4 class="home-title">Why customers choose us</h4>
+			</div>
+			<div class="choose-ul" data-aos="zoom-in">
+				{pboot:list scode=30 num=4 order=sorting}
+				<div class="choose-item">
+					<div class="title">[list:title]</div>
+					<div class="icon"><em class="iconfont icon-[list:subtitle]"></em></div>
+					<div class="info">[list:content drophtml=1 len=350]</div>
+				</div>
+				{/pboot:list}
+			</div>
+		</div>
+	</section>
+	
+	<section class="home-about">
+		<div class="l-wrap">
+			<div class="about-wrap">
+				<div class="about-img" data-aos="fade-up">
+					{pboot:content id=1}<img class="lazy" data-src="[content:ico]" width="700" height="500" alt="about">{/pboot:content}
+					<div class="about-icon">
+					  <img src="{pboot:sitetplpath}/images/about-icon.png" alt="about">
+					  <span>15000m <sup>2</sup>+</span>
+					  <p>Cover Area</p>
+					</div>
+				</div>
+				<div class="about-info" data-aos="fade-down">
+					<h1 class="home-title">{pboot:companyname}</h1>
+					<div class="about-content">
+						<p>{pboot:content id=1}[content:content drophtml=1 len=350]{/pboot:content}</p>
+						<p class="color"><span>7894 +</span> Employees</p>
+					</div>
+					{pboot:sort scode=1}<a class="home-more" href="[sort:link]">View more</a>{/pboot:sort}
+				</div>
+			</div>
+			<div class="about-contact">
+				<p>Looking for properate products?</p>
+				{pboot:sort scode=11}<a href="[sort:link]" class="home-more">Contact us</a>{/pboot:sort}
+			</div>
+		</div>
+	</section>
+
+	<section class="home-project">
+		<div data-aos="zoom-in">
+			<div class="home-des">Group private customization project</div>
+			<h4 class="home-title">Successful Projects</h4>
+		</div>
+		<div class="swiper swiper-no-swiping" id="homeproject" data-aos="fade-up">
+			<div class="swiper-wrapper">
+				{pboot:list scode=18 num=6 order=sorting}
+				<div class="swiper-slide">
+					<a href="[list:link]" class="lazy-wrap" title="[list:title]">
+						<img data-src="[list:ico]" width="300" height="300" class="lazy" alt="[list:title]">
+						<span class="lazy-load"></span>
+					</a>
+				</div>
+				{/pboot:list}
+			</div>
+			<div class="project-button-next"><em class="iconfont icon-jiantou_xiangyou"></em></div>
+			<div class="project-button-prev"><em class="iconfont icon-jiantou_xiangzuo"></em></div>
+		</div>
+	</section>
+	
+	<section class="home-product">
+		<div class="l-wrap"> 
+			<div data-aos="zoom-in">
+				<div class="home-des">Best Selling Products</div>
+				<h4 class="home-title">Hot Products</h4>
+			</div>
+			<div class="index-pro" data-aos="zoom-in">
+				{pboot:list scode=9 num=8 order=sorting}
+				<div class="pro-item">
+					<div class="pro-img">
+						<a href="[list:link]" class="lazy-wrap" title="[list:title]">
+							<img data-src="[list:ico]" data-sizes="369x0 768w,248x0 1024w,312x0 1280w,334x0 1366w,352x0 1440w,392x0 1600w" width="400" height="400" class="lazy" alt="[list:title]" />
+							<span class="lazy-load"></span>
+						</a>
+					</div>
+					<div class="pro-info">
+						<p class="pro-title"><a href="[list:link]" class="line2">[list:title]</a></p>
+						<a class="pro-btn" href="[list:link]" title="More">view more <em>>></em></a>
+					</div>
+				</div>
+				{/pboot:list}
+			</div>
+		</div>
+	</section>
+	
+	<section class="home-activity" style="background-image:url({pboot:sitetplpath}/images/activity-bg.webp);">
+		<div class="l-wrap">
+			<div class="activity-wrap" data-aos="fade-up">
+				<div class="text">Favourable activity</div>
+				<div class="title">Big discounts on new <br>winter products</div>
+				<div class="content">
+					<p>Brighten 12.3 is one of the Naturehike cotton series tents, it is perfect for glamping with family or friends, or you can choose to set it up in one of the city parks or your home patio, then you must be the coolest person in the eyes of passers-by. Join us as a leader of glamping!</p>
+				</div>
+				<div class="img">
+					<div class="lazy-wrap"><img data-src="{pboot:sitetplpath}/images/activity-2.png" class="lazy" alt="Favourable activity"></div>
+					<div class="lazy-wrap"><img data-src="{pboot:sitetplpath}/images/activity-1.png" class="lazy" alt="Favourable activity"></div>
+				</div>
+				{pboot:sort scode=18}<a href="[sort:link]" class="home-more" title="products">More Project</a>{/pboot:sort}
+			</div>
+		</div>
+	</section>
+	
+	<section class="home-news">
+		<div class="l-wrap"> 
+			<div data-aos="zoom-in">
+				<div class="home-des">What's Going on in Our Blog?</div>
+				<h4 class="home-title">Latest News</h4>
+			</div>
+			<div class="news-list" data-aos="fade-up">
+				{pboot:list scode=2 num=4 order=sorting}
+				<div class="news-item">
+					<div class="news-img">
+						<a href="[list:link]" class="lazy-wrap" title="[list:title len=20]">
+							<img class="lazy" data-src="[list:ico]" data-sizes="354x0 768w,238x0 1024w,300x0 1280w,293x0 1366w,310x0 1440w,361x0 1600w" width="345" height="215" alt="[list:title len=20]" />
+							<span class="lazy-load"></span>
+						</a>
+						<div class="news-date">[list:date style=M-d], [list:date style=Y]</div>
+					</div>
+					<div class="news-info">
+						<div class="news-title line2"><a href="[list:link]" title="[list:title len=20]">[list:title len=24]</a></div>
+						<div class="news-text line3">[list:description len=150]</div>
+						<a href="[list:link]" class="news-btn" title="[list:title len=20]" rel="nofollow">Details</a>
+					</div>
+				</div>
+				{/pboot:list}
+			</div>
+		</div>
+	</section>
+</main>
+
+<!-- footer -->
+{include file=foot.html}
+<script src="{pboot:sitetplpath}/js/jquery-3.6.0.js"></script>
+<script src="{pboot:sitetplpath}/js/sitescript.js"></script>
+<script src="{pboot:sitetplpath}/js/swiper.js"></script>
+<script src="{pboot:sitetplpath}/js/style.js"></script>
+<script src="{pboot:sitetplpath}/js/home.js"></script>
+<script src="{pboot:sitetplpath}/js/count.js"></script>
+</body>
+</html>

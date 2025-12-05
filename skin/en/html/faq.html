@@ -1,0 +1,65 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{sort:name}-{sort:title}</title>
+<meta name="Keywords" content="{sort:keywords}" />
+<meta name="Description" content="{sort:description}" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover" />
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link href="{pboot:sitetplpath}/css/en011.css" rel="stylesheet" />
+<link href="{pboot:sitetplpath}/css/swiper.css" rel="stylesheet" type="text/css" />
+<link href="{pboot:sitetplpath}/css/style.css" rel="stylesheet" type="text/css" />
+<link href="{pboot:sitetplpath}/css/page.css" rel="stylesheet" type="text/css" />
+<link href="{pboot:sitetplpath}/css/pagemob.css" rel="stylesheet" type="text/css" media="(max-width:1024px)" />
+<script src="{pboot:sitetplpath}/js/jquery-3.6.0.js"></script>
+<link href="{pboot:sitetplpath}/css/templates.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+{include file=head.html}
+<!-- main -->
+<main>
+	<div class="banner-inner">
+		<img src="{sort:pic}" width="1919" height="350" class="innerbanners" alt="Banner" />
+		<div class="banner-content">
+			<div class="container">
+				<h1 class="banner-title-h1">{sort:name}</h1>
+				<div class="banner-breadcrumbs">{pboot:position separator=>> indextext=Home}</div>
+			</div>
+		</div>
+	</div>
+	<section class="common-main document-main">
+		<div class="l-wrap">
+			<ul class="project-list faqs-list">
+				{pboot:list num=10 order=sorting}
+				<li>
+					<div class="project-info {pboot:if('[list:i]'==1)}open{/pboot:if}">
+						<p class="project-name">[list:title]</p>
+						<div class="project-content" {pboot:if('[list:i]'==1)}style="display: block;"{/pboot:if}>[list:content drophtml=1]</div>
+					</div>
+				</li>
+				{/pboot:list}
+			</ul>
+			<div class="mypages">
+				<ul>
+					<li><a href='{page:index}'>First</a></li>
+					<li><a href='{page:pre}'>Up</a></li>
+					{page:numbar}
+					<li><a href='{page:next}'>Next</a></li>
+					<li><a href='{page:last}'>Last</a></li>
+				</ul>
+			</div>
+		</div>
+  </section>
+</main>
+<!-- footer -->
+{include file=foot.html}
+<script src="{pboot:sitetplpath}/js/jquery-3.6.0.js"></script>
+<script src="{pboot:sitetplpath}/js/sitescript.js"></script>
+<script src="{pboot:sitetplpath}/js/swiper.js"></script>
+<script src="{pboot:sitetplpath}/js/style.js"></script>
+<script src="{pboot:sitetplpath}/js/page.js"></script>
+</body>
+</html>
